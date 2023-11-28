@@ -20,11 +20,21 @@ port.on('open', function () {
   console.log('connection is opened');
 });
 
+let palabraActual = ''; // Variable para almacenar la palabra actual
+
 parser.on('data', function (data) {
-  let flex = parseInt(data, 10) + " GRADOS";
-  console.log(flex);
-  io.emit('flex', data);
+  let letra = data.trim(); // Elimina espacios y caracteres de nueva línea
+  console.log(letra);
+
+  if (letra === ' ') {
+    // Espacio en blanco indica el final de una palabra
+    io.emit('palabra', palabraActual);
+    palabraActual = ''; // Reinicia la variable para la próxima palabra
+  } else {
+    palabraActual += letra; // Concatena la letra a la palabra actual
+  }
 });
+
 
 parser.on('error', (err) => console.log(err));
 port.on('error', (err) => console.log(err));
