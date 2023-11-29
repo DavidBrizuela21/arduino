@@ -1,5 +1,6 @@
+/* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -15,25 +16,104 @@ body {
     text-align: center;
 }
 
-#word-container {
-    margin-top: 20px;
-}
-
-#word {
-    font-size: 24px;
-}
-
-#speak-button {
-    background-color: #4caf50;
+/* Estilos para el encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002441;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+    padding: 20px 10%;
 }
 
-#speak-button:hover {
-    background-color: #45a049;
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img {
+    max-height: 50px;
+    border-radius: 50px;
+    border: 3px solid black;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    background-color: #002441;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos para las tarjetas de miembros del equipo */
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 900px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.team-member {
+    width: 250px; /* Ancho fijo de las tarjetas */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.10);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    margin-bottom: 10px;
+}
+
+.team-member a {
+    text-decoration: none;
+    color: #4caf50;
+    font-weight: bold;
 }

@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header>
+    <a href="index.html" class="logo";>
+        <img src="img/supportech-logo.png" alt="Logotipo SUPPORTECH">
+	<span>SUPPORTECH</span>
+    </a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Sobre nosotros</a></li>
+            <!-- Otros enlaces de navegación -->
+        </ul>
+    </nav>
+</header>
 
 <div class="container">
     <h1>Sensor de Palabra</h1>
@@ -16,6 +29,11 @@
         <button id="delete-button" onclick="deleteLetter()">Eliminar Última Letra</button>
     </div>
 </div>
+
+<footer>
+    
+    <p>&copy; 2023 <a href="about.html" style="color:#fff">SUPPORTECH</a>. Todos los derechos reservados.</p>
+</footer>
 
 <script src="socket.io/socket.io.js"></script>
 <script src="main.js"></script>
