@@ -26,7 +26,7 @@ void loop() {
   int valorMenique = analogRead(A4);
 
   // Imprimir letra en el puerto serie
- //Serial.println(valorPulgar);
+ //Serial.print(valorPulgar);
  //Serial.print(" , ");
  //Serial.print(valorIndice);
  // Serial.print(" , ");
@@ -34,11 +34,11 @@ void loop() {
 //  Serial.print(" , ");
  //Serial.print(valorAnular);
  //Serial.print(" , ");
- //Serial.println(valorMenique);
+//Serial.println(valorMenique);
 
 
 
-//*******************CONDICIONALES*******************//
+//************************************CONDICIONALES*****************************//
 //-----------CONVERSOR--------------
   valorPulgar = conversor(valorPulgar);
   valorMenique = conversor(valorMenique);
@@ -50,8 +50,8 @@ if (valorPulgar == 0 && valorIndice == 0 && valorMedio == 0 && valorAnular == 0 
 }
 
 // A
-if (valorPulgar == 1 && valorIndice == 0 && valorMedio == 0 && valorAnular == 0 && valorMenique == 0 && control == 0){
-  Serial.print("A");
+if (valorPulgar == 2 && valorIndice == 0 && valorMedio == 0 && valorAnular == 0 && valorMenique == 0 && control == 0){
+  Serial.println("A");
   control = 1;
   delay(20);
 }

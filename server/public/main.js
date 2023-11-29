@@ -1,13 +1,27 @@
 const socket = io();
-const wordContainer = document.getElementById('word');
-const speakButton = document.getElementById('speak-button');
+let palabraArray = []; // Array para almacenar las letras
 
 socket.on('palabra', function (data) {
     console.log(data);
-    wordContainer.innerHTML = `Palabra: ${data}`;
+    addToWord(data);
 });
 
+function addToWord(letter) {
+    palabraArray.push(letter);
+    updateWordDisplay();
+}
+
+function deleteLetter() {
+    palabraArray.pop();
+    updateWordDisplay();
+}
+
+function updateWordDisplay() {
+    const wordContainer = document.getElementById('word');
+    wordContainer.innerText = `Palabra: ${palabraArray.join('')}`;
+}
+
 function speakWord() {
-    const word = wordContainer.innerText.split(': ')[1];
+    const word = palabraArray.join('');
     window.speechSynthesis.speak(new SpeechSynthesisUtterance(word));
 }

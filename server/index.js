@@ -20,19 +20,10 @@ port.on('open', function () {
   console.log('connection is opened');
 });
 
-let palabraActual = ''; // Variable para almacenar la palabra actual
-
 parser.on('data', function (data) {
-  let letra = data.trim(); // Elimina espacios y caracteres de nueva línea
-  console.log(letra);
-
-  if (letra === ' ') {
-    // Espacio en blanco indica el final de una palabra
-    io.emit('palabra', palabraActual);
-    palabraActual = ''; // Reinicia la variable para la próxima palabra
-  } else {
-    palabraActual += letra; // Concatena la letra a la palabra actual
-  }
+  let palabra = data.trim();
+  console.log(palabra);
+  io.emit('palabra', palabra);
 });
 
 
